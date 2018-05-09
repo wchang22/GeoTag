@@ -211,7 +211,7 @@ def read_geo_tag(img_path):
 
     try:
         alt_sign = _get_alt_sign(exif_dict['GPS']
-                                .get(piexif.GPSIFD.GPSAltitudeRef, 0))        
+                                 .get(piexif.GPSIFD.GPSAltitudeRef, 1))        
         alt = alt_sign * \
               round(exif_dict['GPS'][piexif.GPSIFD.GPSAltitude][0] /
                     exif_dict['GPS'][piexif.GPSIFD.GPSAltitude][1], 7)
