@@ -3,6 +3,7 @@ Read and write exif geotags from JPEG images
 
 ## Dependencies
 * [Piexif](https://github.com/hMatoba/Piexif)
+* [Pillow](https://pillow.readthedocs.io/en/latest/)
 
 ## Functions
 * <i>coord_dec_to_dms(coord)</i>
