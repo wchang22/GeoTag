@@ -1,20 +1,26 @@
 # GeoTag
-Read and write exif geotags from JPEG images
+Read and write exif/xmp geotags from/to JPEG images
 
 ## Dependencies
-* [Piexif](https://github.com/hMatoba/Piexif)
+* [py3exiv2](https://launchpad.net/py3exiv2)
 * [Pillow](https://pillow.readthedocs.io/en/latest/)
 
 ## Functions
-* <i>coord_dec_to_dms(coord)</i>
-  * Convert decimal lat/lon to degrees, minutes, seconds (dms)
-* <i>lat_dms_to_dec(lat, lat_ref)</i>
-  * Convert dms lat to decimal form
-  * lat_ref specifies N or S
-* <i>lon_dms_to_dec(lon, lon_ref)</i>
-  * Convert dms lon to decimal form
-  * lon_ref specifies E or W
-* <i>write_geo_tag(img_path, lat, lon, alt_abs, hdg=None)</i>
-  * write exif geo tags (lat, lon, absolute alt, optional heading) to image
-* <i>read_geo_tag(img_path)</i>
-  * read exif geo tags from an image in the form (lat, lon, abs alt, hdg)
+```python
+# Convert decimal lat/lon to degrees, minutes, seconds (dms)
+coord_dec_to_dms(coord)
+
+# Convert dms lat to decimal form
+# lat_ref specifies N or S
+lat_dms_to_dec(lat, lat_ref)
+
+# Convert dms lon to decimal form
+# lon_ref specifies E or W
+lon_dms_to_dec(lon, lon_ref)
+
+# write geotags (lat, lon, absolute alt, heading, roll, pitch, yaw) to image
+write_geo_tag(img_path, lat, lon, alt_abs, hdg=None, roll=None, pitch=None, yaw=None)
+
+# read geotags from an image in the form (lat, lon, abs alt, hdg, roll, pitch, yaw)
+read_geo_tag(img_path)
+```
